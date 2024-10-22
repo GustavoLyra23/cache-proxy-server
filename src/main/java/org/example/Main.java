@@ -28,14 +28,12 @@ public class Main {
             String origin = matcher.group(2);
             System.out.println("Port: " + port);
             System.out.println("Origin: " + origin);
+
+            webService.setOriginServer(origin);
+
+            webService.startServer(port);
         } else {
             System.out.println("Invalid input. Please use the format: --port <number> --origin <url>");
-            return;
         }
-        webService.startServer(port);
-
-
     }
-
-
 }
